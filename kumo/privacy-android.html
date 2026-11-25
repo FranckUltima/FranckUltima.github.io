@@ -14,19 +14,19 @@
 <body>
 <p class="muted"><a href="#fr">Français ↓</a> · iPhone version: <a href="privacy.html">privacy.html</a></p>
 <h1>Kumo for Android — Privacy Policy</h1>
-<p class="muted">Last updated: November 11, 2026</p>
+<p class="muted">Last updated: November 24, 2026</p>
 
 <p>Kumo is designed to protect privacy, and that principle applies to the app itself.</p>
 
 <h2>Your photos never leave your device</h2>
-<p>No photo, no video and no face data ever leaves your phone. We have no servers, no accounts, no ads and no analytics. Face detection and masking work entirely <strong>on your device</strong>. Only your subscription and the free-video counter go through your Google Play account (see “Purchases” below).</p>
+<p>No photo, no video and no face data ever leaves your phone. Face detection and masking work entirely <strong>on your device</strong>.</p>
+<p>What does leave the phone: <strong>anonymous statistics about how the app is used</strong> and <strong>crash reports</strong>, sent to Kumo's own server at most once a week, with no photo, no face and no identifier (on by default, can be turned off in Settings, see below); and your subscription and free-video counter, which go through your Google Play account (see “Purchases” below). No account, no ads, no tracking. Nothing is sold or shared with third parties.</p>
 
 <h2>Your photos and videos</h2>
 <ul>
-  <li>When you pick a photo or video with the Android photo picker, it is processed <strong>locally on your device</strong> by open-source models that run on the device (LiteRT, formerly TensorFlow Lite, and MediaPipe).</li>
+  <li>When you pick a photo or video with the Android photo picker, it is processed <strong>locally on your device</strong> by open-source models that run on the device (with LiteRT, formerly TensorFlow Lite).</li>
   <li>Your photos and videos are <strong>never uploaded</strong> to us or to any third party.</li>
   <li>Face detection, blurring and masking happen entirely offline. No internet connection is required.</li>
-  <li>The usage statistics that the MediaPipe library can send to Google are <strong>disabled</strong> in Kumo.</li>
   <li>When you save or share a result, your device's standard features handle it (gallery, share sheet). Kumo does not see where you share it.</li>
 </ul>
 
@@ -38,38 +38,61 @@
   <li>We do <strong>not retain</strong> any face data. The only result kept is the edited photo or video you choose to save or share, in which the faces are already covered.</li>
 </ul>
 
+<h2>Anonymous statistics and crash reports</h2>
+<p>To know which features are used and to fix bugs, Kumo counts how the app is used and sends these counts to its own server.</p>
+<p><strong>What is sent</strong>: totals since the last send, grouped in ranges rather than exact values.</p>
+<ul>
+  <li>Which stickers, masks, clouds, blur and pixel effects were used, and which screens and features of the app were opened (for example Settings, the subscription screen, links).</li>
+  <li>How many photos and videos were processed, saved or opened in the share sheet; their resolution, orientation, length and frame rate, and the number of faces, in ranges.</li>
+  <li>How long analysis and export took, in ranges; whether they finished, were stopped or failed; device temperature and low-memory alerts during processing.</li>
+  <li>Number of app launches and session length, in ranges.</li>
+  <li>App version, main Android version, device family (low, mid or high range, based on memory size, never the exact model), app language, and whether you have Premium.</li>
+  <li>Crash reports: the type of error and the names of the Kumo functions involved (with line numbers in Kumo's code), with no error message, no file path and no content. Crashes in native code and app freezes are only counted, without details.</li>
+</ul>
+<p><strong>What is never sent</strong>: any photo or video, even reduced; faces, or their position or size; anything that could tell one person from another; file or album names; exact dates or durations; your location or country; text you type; where you share; any identifier (device, Android ID, user, installation or advertising) and no cookie. There is no tracking and no advertising.</p>
+<p><strong>How</strong>:</p>
+<ul>
+  <li>A count of only one or two uses is not sent: it waits until it grows. Crash reports are the exception, because a single crash needs to reach us and its trace says nothing about you.</li>
+  <li>Sent at most once a week, when you open the app, over an encrypted connection (HTTPS). The first send happens no earlier than 7 days after installation.</li>
+  <li>Sent to <a href="https://stats.kumokids.com">https://stats.kumokids.com</a>, Kumo's own server, hosted by Hetzner in Finland (European Union). Like any server, it sees your IP address during the connection, but it <strong>does not record it</strong> (no logs).</li>
+  <li>The server only keeps weekly totals (by platform, app version and device family) and crash reports grouped by type, for 24 months at most; older data is deleted automatically. They are not shared with any third party, not sold and not used for advertising.</li>
+</ul>
+<p><strong>Your choice</strong>: the “Help improve Kumo” switch, in Settings → Privacy, is on by default. You can turn it off at any time: nothing more is sent, and the counts waiting on your device are erased. The app works exactly the same either way.</p>
+<p><strong>Deleting data</strong>: because these statistics are not linked to anyone, we cannot find the ones that came from your device in order to show or delete them. Turning the switch off stops any future send.</p>
+
 <h2>Permissions</h2>
 <p>Kumo uses the Android photo picker, which needs no permission to read your library: Kumo only receives the photo or video you select. On Android 9 and earlier, saving a result to your gallery uses the storage permission.</p>
 
 <h2>Purchases</h2>
 <p>Kumo Premium is an <strong>auto-renewing yearly subscription</strong> processed by <strong>Google Play</strong>. Google handles the transaction according to its own privacy policy; Kumo receives no payment information. You can manage or cancel the subscription anytime in Google Play (Payments &amp; subscriptions). The count of free video exports is kept on your device and, so that it survives a reinstall, in Google's Block Store tied to your Google account. It is backed up to the cloud only when Google can encrypt it end to end (Android 9 or later with a screen lock); otherwise it stays on your device. Kumo has no access to it from outside your device.</p>
+<p>The Google Play billing library built into Kumo to handle the subscription may send its own technical logs to Google, independently of the “Help improve Kumo” switch. Kumo does not receive them. They are covered by <a href="https://policies.google.com/privacy">Google's privacy policy</a>.</p>
 
 <h2>Children</h2>
-<p>Kumo is meant to help parents protect children's privacy. The app collects no data from anyone, children included.</p>
+<p>Kumo is meant for parents, to help them protect children's privacy. The statistics only describe how the app is used, never the people in the photos or videos. Kumo collects no personal data about children.</p>
 
 <h2>Changes</h2>
 <p>If this policy changes, the updated version will be posted at this address.</p>
 
 <h2>Contact</h2>
-<p><a href="mailto:kumoappcontact@gmail.com">kumoappcontact@gmail.com</a></p>
+<p>Kumo is developed by Franck Geslin. <a href="mailto:kumoappcontact@gmail.com">kumoappcontact@gmail.com</a></p>
 
 <hr>
 
 <h1 id="fr" lang="fr">Kumo pour Android — Politique de confidentialité</h1>
 <div lang="fr">
-<p class="muted">Dernière mise à jour : 11 novembre 2026 · Version iPhone : <a href="privacy.html#fr">privacy.html</a></p>
+<p class="muted">Dernière mise à jour : 24 novembre 2026 · Version iPhone : <a href="privacy.html#fr">privacy.html</a></p>
 
 <p>Kumo est conçue pour protéger la vie privée, et ce principe s'applique à l'app elle-même.</p>
 
 <h2>Vos photos ne quittent jamais votre appareil</h2>
-<p>Aucune photo, aucune vidéo et aucune donnée de visage ne quitte votre téléphone. Pas de serveur, pas de compte, pas de publicité, pas d'outil de mesure d'audience. La détection et le masquage des visages se font entièrement <strong>sur votre appareil</strong>. Seuls l'abonnement et le compteur des vidéos gratuites passent par votre compte Google Play (voir « Achats » plus bas).</p>
+<p>Aucune photo, aucune vidéo et aucune donnée de visage ne quitte votre téléphone. La détection et le masquage des visages se font entièrement <strong>sur votre appareil</strong>.</p>
+<p>Ce qui quitte le téléphone : des <strong>statistiques anonymes sur l'utilisation de l'app</strong> et des <strong>rapports de plantage</strong>, envoyés au serveur de Kumo au plus une fois par semaine, sans photo, sans visage et sans identifiant (activé par défaut, désactivable dans les Réglages, voir plus bas) ; et l'abonnement et le compteur des vidéos gratuites, qui passent par votre compte Google Play (voir « Achats » plus bas). Pas de compte, pas de publicité, pas de suivi. Rien n'est vendu ni partagé avec des tiers.</p>
 
 <h2>Vos photos et vidéos</h2>
 <ul>
-  <li>La photo ou la vidéo que vous choisissez avec le sélecteur de photos d'Android est traitée <strong>localement sur votre appareil</strong>, par des modèles libres qui tournent sur l'appareil (LiteRT, anciennement TensorFlow Lite, et MediaPipe).</li>
+  <li>La photo ou la vidéo que vous choisissez avec le sélecteur de photos d'Android est traitée <strong>localement sur votre appareil</strong>, par des modèles libres qui tournent sur l'appareil (avec LiteRT, anciennement TensorFlow Lite).</li>
   <li>Vos photos et vidéos ne sont <strong>jamais envoyées</strong>, ni à nous ni à un tiers.</li>
   <li>La détection des visages, le flou et le masquage se font entièrement hors ligne. Aucune connexion internet n'est nécessaire.</li>
-  <li>Les statistiques d'usage que la bibliothèque MediaPipe peut envoyer à Google sont <strong>désactivées</strong> dans Kumo.</li>
   <li>Quand vous enregistrez ou partagez un résultat, ce sont les fonctions standard de l'appareil qui s'en chargent (galerie, partage). Kumo ne sait pas où vous le partagez.</li>
 </ul>
 
@@ -81,20 +104,43 @@
   <li>Nous ne <strong>conservons aucune</strong> donnée de visage. Le seul résultat conservé est la photo ou la vidéo que vous choisissez d'enregistrer ou de partager, où les visages sont déjà masqués.</li>
 </ul>
 
+<h2>Statistiques anonymes et rapports de plantage</h2>
+<p>Pour savoir quelles fonctions servent et pour corriger les bugs, Kumo compte la façon dont l'app est utilisée et envoie ces totaux à son propre serveur.</p>
+<p><strong>Ce qui est envoyé</strong> : des totaux depuis le dernier envoi, regroupés par tranches plutôt qu'en valeurs exactes.</p>
+<ul>
+  <li>Les stickers, masques, nuages, flous et pixels utilisés, et les écrans et fonctions de l'app ouverts (par exemple les Réglages, l'écran d'abonnement, les liens).</li>
+  <li>Le nombre de photos et de vidéos traitées, enregistrées ou ouvertes dans la feuille de partage ; leur résolution, leur orientation, leur durée et leur nombre d'images par seconde, et le nombre de visages, par tranches.</li>
+  <li>La durée de l'analyse et de l'export, par tranches ; s'ils se sont terminés, ont été arrêtés ou ont échoué ; la température de l'appareil et les alertes de mémoire pendant le traitement.</li>
+  <li>Le nombre de lancements de l'app et la durée des sessions, par tranches.</li>
+  <li>La version de l'app, la version principale d'Android, la famille d'appareil (entrée, milieu ou haut de gamme, selon la quantité de mémoire, jamais le modèle exact), la langue de l'app, et si vous avez Premium.</li>
+  <li>Les rapports de plantage : le type d'erreur et les noms des fonctions de Kumo concernées (avec les numéros de ligne dans le code de Kumo), sans message d'erreur, sans chemin de fichier et sans contenu. Les plantages du code natif et les blocages de l'app sont seulement comptés, sans détail.</li>
+</ul>
+<p><strong>Ce qui n'est jamais envoyé</strong> : aucune photo ni vidéo, même réduite ; aucun visage, ni sa position ni sa taille ; rien qui permette de distinguer une personne d'une autre ; aucun nom de fichier ou d'album ; aucune date ni durée exacte ; ni votre position ni votre pays ; aucun texte saisi ; aucune destination de partage ; aucun identifiant (d'appareil, Android ID, d'utilisateur, d'installation ou publicitaire) et aucun cookie. Il n'y a ni suivi ni publicité.</p>
+<p><strong>Comment</strong> :</p>
+<ul>
+  <li>Une case qui ne compte qu'une ou deux utilisations n'est pas envoyée : elle attend d'avoir grandi. Les rapports de plantage font exception, car un plantage isolé doit nous parvenir et sa trace ne dit rien de vous.</li>
+  <li>Envoi au plus une fois par semaine, à l'ouverture de l'app, par une connexion chiffrée (HTTPS). Le premier envoi a lieu au plus tôt 7 jours après l'installation.</li>
+  <li>Envoi à <a href="https://stats.kumokids.com">https://stats.kumokids.com</a>, le serveur de Kumo, hébergé chez Hetzner en Finlande (Union européenne). Comme tout serveur, il voit votre adresse IP le temps de la connexion, mais il <strong>ne la conserve pas</strong> (aucun journal).</li>
+  <li>Le serveur ne garde que des totaux par semaine (par plateforme, version de l'app et famille d'appareil) et des rapports de plantage regroupés par type, pendant 24 mois au plus ; les données plus anciennes sont effacées automatiquement. Ils ne sont partagés avec aucun tiers, ni vendus, ni utilisés pour de la publicité.</li>
+</ul>
+<p><strong>Votre choix</strong> : l'interrupteur « Aider à améliorer Kumo », dans Réglages → Confidentialité, est activé par défaut. Vous pouvez le désactiver à tout moment : plus rien n'est envoyé, et les compteurs en attente sur votre appareil sont effacés. L'app fonctionne exactement de la même façon dans les deux cas.</p>
+<p><strong>Suppression</strong> : comme ces statistiques ne sont liées à personne, nous ne pouvons pas retrouver celles qui viennent de votre appareil pour vous les montrer ou les supprimer. Désactiver l'interrupteur arrête tout envoi futur.</p>
+
 <h2>Autorisations</h2>
 <p>Kumo utilise le sélecteur de photos d'Android, qui ne demande aucune autorisation pour lire votre galerie : Kumo ne reçoit que la photo ou la vidéo que vous choisissez. Sur Android 9 et antérieur, l'enregistrement du résultat dans la galerie utilise l'autorisation de stockage.</p>
 
 <h2>Achats</h2>
 <p>Kumo Premium est un <strong>abonnement annuel à renouvellement automatique</strong> traité par <strong>Google Play</strong>. Google gère la transaction selon sa propre politique ; Kumo ne reçoit aucune information de paiement. Vous pouvez gérer ou annuler l'abonnement à tout moment dans Google Play (Paiements et abonnements). Le nombre d'exports vidéo gratuits est conservé sur l'appareil et, pour survivre à une réinstallation, dans le Block Store de Google lié à votre compte Google. Il n'est sauvegardé dans le cloud que si Google peut le chiffrer de bout en bout (Android 9 ou plus, avec un verrouillage d'écran) ; sinon il reste sur votre appareil. Kumo n'y a pas accès hors de votre appareil.</p>
+<p>La bibliothèque de facturation de Google Play, intégrée à Kumo pour gérer l'abonnement, peut envoyer ses propres journaux techniques à Google, indépendamment de l'interrupteur « Aider à améliorer Kumo ». Kumo ne les reçoit pas. Ils relèvent des <a href="https://policies.google.com/privacy?hl=fr">règles de confidentialité de Google</a>.</p>
 
 <h2>Enfants</h2>
-<p>Kumo aide les parents à protéger la vie privée des enfants. L'app ne collecte aucune donnée de qui que ce soit, enfants compris.</p>
+<p>Kumo s'adresse aux parents, pour les aider à protéger la vie privée des enfants. Les statistiques décrivent seulement l'utilisation de l'app, jamais les personnes photographiées ou filmées. Kumo ne collecte aucune donnée personnelle d'enfant.</p>
 
 <h2>Modifications</h2>
 <p>En cas de changement, la version à jour sera publiée à cette adresse.</p>
 
 <h2>Contact</h2>
-<p><a href="mailto:kumoappcontact@gmail.com">kumoappcontact@gmail.com</a></p>
+<p>Kumo est développée par Franck Geslin. <a href="mailto:kumoappcontact@gmail.com">kumoappcontact@gmail.com</a></p>
 </div>
 </body>
 </html>
